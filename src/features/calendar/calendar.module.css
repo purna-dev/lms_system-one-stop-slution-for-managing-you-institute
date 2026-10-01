@@ -1,0 +1,206 @@
+.liveBanner {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.liveCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+  background: linear-gradient(135deg, var(--accent-soft), var(--surface));
+  box-shadow: var(--shadow);
+}
+
+.livePulse {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 55%, transparent);
+  animation: pulse 1.4s ease infinite;
+}
+
+@keyframes pulse {
+  70% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+.classTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 0.2rem;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.1rem;
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.metaRow span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 1.1rem;
+  align-items: start;
+}
+
+.calendarCard {
+  min-width: 0;
+}
+
+.fcWrap {
+  --fc-border-color: var(--border);
+  --fc-page-bg-color: transparent;
+  --fc-neutral-bg-color: var(--surface-2);
+  --fc-list-event-hover-bg-color: var(--accent-soft);
+  --fc-today-bg-color: color-mix(in srgb, var(--gold) 18%, transparent);
+  --fc-now-indicator-color: var(--accent);
+  --fc-button-bg-color: var(--navy);
+  --fc-button-border-color: var(--navy);
+  --fc-button-hover-bg-color: var(--navy-mid);
+  --fc-button-hover-border-color: var(--navy-mid);
+  --fc-button-active-bg-color: var(--accent);
+  --fc-button-active-border-color: var(--accent);
+  --fc-button-text-color: #f5f7fa;
+  --fc-event-border-color: transparent;
+  --fc-event-text-color: #f5f7fa;
+  --fc-small-font-size: 0.82rem;
+  font-size: 0.92rem;
+}
+
+.fcWrap :global(.fc) {
+  font-family: var(--font);
+  color: var(--text);
+}
+
+.fcWrap :global(.fc .fc-toolbar) {
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.fcWrap :global(.fc .fc-toolbar-title) {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.fcWrap :global(.fc .fc-button) {
+  border-radius: 10px;
+  font-weight: 700;
+  text-transform: none;
+  padding: 0.4rem 0.75rem;
+  box-shadow: none;
+}
+
+.fcWrap :global(.fc .fc-button-primary:not(:disabled).fc-button-active),
+.fcWrap :global(.fc .fc-button-primary:not(:disabled):active) {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.fcWrap :global(.fc .fc-col-header-cell-cushion),
+.fcWrap :global(.fc .fc-daygrid-day-number) {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.45rem;
+}
+
+.fcWrap :global(.fc .fc-timegrid-slot-label-cushion) {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.fcWrap :global(.fc .fc-scrollgrid),
+.fcWrap :global(.fc .fc-scrollgrid-section > td) {
+  border-radius: 12px;
+}
+
+.fcWrap :global(.fc-theme-standard td),
+.fcWrap :global(.fc-theme-standard th) {
+  border-color: var(--border);
+}
+
+.fcWrap :global(.fc .fc-daygrid-event),
+.fcWrap :global(.fc .fc-timegrid-event) {
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(10, 25, 47, 0.12);
+}
+
+.fcWrap :global(.fc .fc-timegrid-event .fc-event-main) {
+  padding: 0.15rem 0.3rem;
+}
+
+.fcWrap :global(.fc .fc-list-day-cushion) {
+  background: var(--surface-2);
+}
+
+.fcWrap :global(.fc .fc-list-event-dot) {
+  border-color: var(--accent);
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.state {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+
+.stateLive {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.stateUpcoming {
+  background: var(--gold-soft);
+  color: var(--warning);
+}
+
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
