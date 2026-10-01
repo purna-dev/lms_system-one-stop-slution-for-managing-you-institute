@@ -1,4 +1,4 @@
-# Institute LMS (`app_q`)
+# Institute LMS 
 
 All-in-one institute toolkit — React + Vite + localStorage.
 
